@@ -1,11 +1,12 @@
 --- 
-title: "Analysis of the \"automobile-lossess-prediction\" dataset"
+title: "Analysis of the \"automobile-loss-prediction\" dataset"
 subtitle: "Illinois State University - ACC 471 - Final Report"
 author: "Jared Musil & Jake McNair"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
+classoption: openany
 fontsize: 12pt
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
@@ -14,27 +15,17 @@ github-repo: jaredmusil/acc471-final-report
 description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
 ---
 
-# Prerequisites
-
-## Foreword
-
-This report was written using the R package `Bookdown`. This was done as it allows for reproducable research of our data, methods, and results. Where appropriate, the code has been included inline with the results. All other methods are contained within the Appendix.
-
-It is also available as a website reading on mobile devices, and and epub for reading offline.
-
-## Markdown Test
-
-is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
-
-For now, you have to install the development versions of **bookdown** from Github:
-
-```{r eval=FALSE}
-devtools::install_github("rstudio/bookdown")
+```{r, load-dependencies, echo=FALSE}
+library(bookdown)
 ```
 
-Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
+# Introduction {#intro}
 
-To compile this example to PDF, you need to install XeLaTeX.
+The ability to utilize analytics to predict automobiele lossess is a area of active research and application throughout the insurance and fin-tech industries. All of the "big four" US domiciled auto insurrers being State Farm, Geico, Allstate, and Progressive are actively engaging in research to operationalize analytical models to increase operational efficency. [citation needed...]. This dataset is representitive of claims data common to all of these auto insurance providers, and the industry at large.  
+
+From a consumer standpoint, this has the potential to reduce average claim times, reduce premium costs, and improve claims decisions (total loss, not total loss).  
+
+Throughout this report, the columns of our dataset will be refered to as factors, and the rows of our dataset will be refered to as reccords. This is because it follows the terminology used by the R statistical programming language, which was the analytical tool used in this report. This was chosen to allow for reproducable research and full transparency of the methods used to arrive at our conclusions. The code itself has been omitted from the report for brevity, but is available for review and reuse at the following URL: https://github.com/jaredmusil/acc471-final-report 
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages

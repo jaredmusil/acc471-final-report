@@ -1,8 +1,0 @@
-# Introduction {#intro}
-
-Throughout this report, the columns of our dataset will be refered to as factors, and the rows of our dataset will be refered to as reccords. This is 
-
-The technology used to generate this report was the R statistical programming language. This was chosen to allow for reproducable research and full transparency of the methods used to arrive at our conclusions. The code itself has been omitted from the report for brevity, but is available for review and reuse in this reports gitlab page [link][gitlab].
-
-
-[gitlab](https://github.com/jaredmusil/acc471-final-report)

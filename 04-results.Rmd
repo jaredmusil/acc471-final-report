@@ -1,0 +1,50 @@
+# Results
+
+...
+
+## Regression Tree
+
+```{r regression-tree, echo=FALSE}
+# import regression tree library
+library(rpart)
+
+# load data
+data_clean <- read.csv("data/data-clean.csv")
+
+# grow tree 
+fit <- rpart(X1 ~ X2 + X3 + X4 + X5 + X6 + X7 + X8 + X9 + X10, method="anova", data=data_clean)
+# NOTE: method={"class" for a classification tree, "anova" for a regression tree}
+
+# plot tree 
+plot(fit, uniform=TRUE, main="Regression Tree")
+text(fit, use.n=TRUE, all=TRUE, cex=.8)
+```
+
+```{r regression-tree-pruned, echo=FALSE}
+# prune the tree 
+pfit <- prune(fit, cp=0.01160389) # from cptable   
+
+# plot the pruned tree 
+plot(pfit, uniform=TRUE, main="Pruned Regression Tree")
+text(pfit, use.n=TRUE, all=TRUE, cex=.8)
+```
+
+...
+
+**Lift Chart**
+
+...
+
+**Decile Chart**
+
+...
+
+## Classification Tree
+
+**Lift Chart**
+
+...
+
+**Decile Chart**
+
+...

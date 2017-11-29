@@ -1,0 +1,10 @@
+# Methods Used
+
+A number of analytical methods are available for use such as decision trees, classification trees, regression, multiple-regression. Not all of these techniques makes sense for our purpouses as they are used to predict diffrent types of information.
+
+We utilized `X` methods in our analysis, while setteling on regression trees for our final reccomendation.
+
+The main goal of our analysis is to predict how risky a particular car is, and therefore Regression trees make the most sense. 
+
+![__Source:__ http://www.simafore.com/blog/bid/62482/2-main-differences-between-classification-and-regression-trees](img/04-decision-tree-flowchart.png)
+
