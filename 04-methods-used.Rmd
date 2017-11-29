@@ -1,0 +1,3 @@
+# Methods Used
+
+We utilized `X` methods in our analysis, while settlling on regression trees for our final reccomendations.

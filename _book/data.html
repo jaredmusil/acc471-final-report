@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ACC 471 - Final Report</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
+  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
+
+  <meta property="og:title" content="ACC 471 - Final Report" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="jaredmusil/acc471-final-report" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="ACC 471 - Final Report" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Jared Musil &amp; Jake McNair">
+
+
+<meta name="date" content="2017-11-29">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="problem-description.html">
+<link rel="next" href="methods-used.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="problem-description.html"><a href="problem-description.html"><i class="fa fa-check"></i><b>3</b> Problem Description</a></li>
+<li class="chapter" data-level="4" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>4</b> Data</a></li>
+<li class="chapter" data-level="5" data-path="methods-used.html"><a href="methods-used.html"><i class="fa fa-check"></i><b>5</b> Methods Used</a></li>
+<li class="chapter" data-level="6" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>6</b> Results</a></li>
+<li class="chapter" data-level="7" data-path="reccomentations.html"><a href="reccomentations.html"><i class="fa fa-check"></i><b>7</b> Reccomentations</a></li>
+<li class="chapter" data-level="8" data-path="future-analysis.html"><a href="future-analysis.html"><i class="fa fa-check"></i><b>8</b> Future Analysis</a></li>
+<li class="chapter" data-level="9" data-path="conculsion.html"><a href="conculsion.html"><i class="fa fa-check"></i><b>9</b> Conculsion</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ACC 471 - Final Report</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Data</h1>
+<p>Before doing any analysis, the feactors withing data set were first checked for missing or invalid data. Of the original 205 reccords, 41 were removed because they contained missing data for the <code>normalized-lossess</code> factor, which was coded as a <code>?</code>. This resulted in a dataset of 164 reccords of clean data. No other factors needed cleaning up, as the data was properly coded for each reccord.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readxl)
+data_dict &lt;-<span class="st"> </span>readxl::<span class="kw">read_xlsx</span>(<span class="st">&quot;automobile-losses-data-dictionary.xlsx&quot;</span>)
+knitr::<span class="kw">kable</span>(<span class="kw">head</span>(data_dict, <span class="dv">20</span>), <span class="dt">caption =</span> <span class="st">&#39;Data Dictionary - Initial&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<table>
+<caption><span id="tab:data-dictionary">Table 4.1: </span>Data Dictionary - Initial</caption>
+<thead>
+<tr class="header">
+<th align="right">#</th>
+<th align="left">Description</th>
+<th align="left">Values</th>
+<th align="left">Keep</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">symboling</td>
+<td align="left">-3, -2, -1, 0, 1, 2, 3</td>
+<td align="left">No</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">normalized-losses</td>
+<td align="left">continuous from [65 to 256]</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">make</td>
+<td align="left">alfa-romero, audi, bmw, chevrolet, dodge, honda, isuzu, jaguar, mazda, mercedes-benz, mercury, mitsubishi, nissan, peugot, plymouth, porsche, mitsubishi, nissan, peugot, plymouth, porsche, renault, saab, subaru, toyota, volkswagen, volvo</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">fuel-type</td>
+<td align="left">diesel, gas</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">aspiration</td>
+<td align="left">std, turbo</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">num-of-doors</td>
+<td align="left">four, two</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="left">body-style</td>
+<td align="left">hardtop, wagon, sedan, hatchback, convertible</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="left">drive-wheels</td>
+<td align="left">4wd, fwd, rwd.</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="left">engine-location</td>
+<td align="left">front, rear</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="left">wheel-base</td>
+<td align="left">continuous from [86.6 to 120.9]</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="left">length</td>
+<td align="left">continuous from [141.1 to 208.1]</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="left">width</td>
+<td align="left">continuous from [60.3 to 72.3]</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="left">height</td>
+<td align="left">continuous from [47.8 to 59.8]</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="left">curb-weight:</td>
+<td align="left">continuous from [1488 to 4066]</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="left">engine-type</td>
+<td align="left">dohc, dohcv, l, ohc, ohcf, ohcv, rotor</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="even">
+<td align="right">16</td>
+<td align="left">num-of-cylinders</td>
+<td align="left">eight, five, four, six, three, twelve, two</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="odd">
+<td align="right">17</td>
+<td align="left">engine-size</td>
+<td align="left">continuous from [61 to 326]</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="even">
+<td align="right">18</td>
+<td align="left">fuel-system</td>
+<td align="left">1bbl, 2bbl, 4bbl, idi, mfi, mpfi, spdi, spfi</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="odd">
+<td align="right">19</td>
+<td align="left">bore</td>
+<td align="left">continuous from [2.54 to 3.94]</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="left">stroke</td>
+<td align="left">continuous from [2.07 to 4.17]</td>
+<td align="left">Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Of these factors, 10 of the initial 26 were removed, resulting in the 16 factors that will be used in analysis. These factors are noted in green in <code>Keep</code> column of the above table.</p>
+<p>The objective factor in the dataset is determined to be ``.</p>
+<p>Next, the data was partitioned into three groups named <em>training</em>, <em>test</em>, and <em>validation</em>. This was</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data &lt;-<span class="st"> </span>readxl::<span class="kw">read_xlsx</span>(<span class="st">&quot;automobile-losses.xlsx&quot;</span>)
+knitr::<span class="kw">kable</span>(<span class="kw">head</span>(data, <span class="dv">20</span>), <span class="dt">caption =</span> <span class="st">&#39;Dataset&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<table>
+<caption><span id="tab:raw-data">Table 4.2: </span>Dataset</caption>
+<thead>
+<tr class="header">
+<th align="right">1</th>
+<th align="left">2</th>
+<th align="left">3</th>
+<th align="left">4</th>
+<th align="left">5</th>
+<th align="left">6</th>
+<th align="left">7</th>
+<th align="left">8</th>
+<th align="left">9</th>
+<th align="right">10</th>
+<th align="right">11</th>
+<th align="right">12</th>
+<th align="right">13</th>
+<th align="right">14</th>
+<th align="left">15</th>
+<th align="left">16</th>
+<th align="right">17</th>
+<th align="left">18</th>
+<th align="left">19</th>
+<th align="left">20</th>
+<th align="right">21</th>
+<th align="left">22</th>
+<th align="left">23</th>
+<th align="right">24</th>
+<th align="right">25</th>
+<th align="left">26</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">?</td>
+<td align="left">alfa-romero</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">two</td>
+<td align="left">convertible</td>
+<td align="left">rwd</td>
+<td align="left">front</td>
+<td align="right">88.6</td>
+<td align="right">168.8</td>
+<td align="right">64.1</td>
+<td align="right">48.8</td>
+<td align="right">2548</td>
+<td align="left">dohc</td>
+<td align="left">four</td>
+<td align="right">130</td>
+<td align="left">mpfi</td>
+<td align="left">3.47</td>
+<td align="left">2.68</td>
+<td align="right">9.0</td>
+<td align="left">111</td>
+<td align="left">5000</td>
+<td align="right">21</td>
+<td align="right">27</td>
+<td align="left">13495</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="left">?</td>
+<td align="left">alfa-romero</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">two</td>
+<td align="left">convertible</td>
+<td align="left">rwd</td>
+<td align="left">front</td>
+<td align="right">88.6</td>
+<td align="right">168.8</td>
+<td align="right">64.1</td>
+<td align="right">48.8</td>
+<td align="right">2548</td>
+<td align="left">dohc</td>
+<td align="left">four</td>
+<td align="right">130</td>
+<td align="left">mpfi</td>
+<td align="left">3.47</td>
+<td align="left">2.68</td>
+<td align="right">9.0</td>
+<td align="left">111</td>
+<td align="left">5000</td>
+<td align="right">21</td>
+<td align="right">27</td>
+<td align="left">16500</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">?</td>
+<td align="left">alfa-romero</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">two</td>
+<td align="left">hatchback</td>
+<td align="left">rwd</td>
+<td align="left">front</td>
+<td align="right">94.5</td>
+<td align="right">171.2</td>
+<td align="right">65.5</td>
+<td align="right">52.4</td>
+<td align="right">2823</td>
+<td align="left">ohcv</td>
+<td align="left">six</td>
+<td align="right">152</td>
+<td align="left">mpfi</td>
+<td align="left">2.68</td>
+<td align="left">3.47</td>
+<td align="right">9.0</td>
+<td align="left">154</td>
+<td align="left">5000</td>
+<td align="right">19</td>
+<td align="right">26</td>
+<td align="left">16500</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">164</td>
+<td align="left">audi</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">four</td>
+<td align="left">sedan</td>
+<td align="left">fwd</td>
+<td align="left">front</td>
+<td align="right">99.8</td>
+<td align="right">176.6</td>
+<td align="right">66.2</td>
+<td align="right">54.3</td>
+<td align="right">2337</td>
+<td align="left">ohc</td>
+<td align="left">four</td>
+<td align="right">109</td>
+<td align="left">mpfi</td>
+<td align="left">3.19</td>
+<td align="left">3.4</td>
+<td align="right">10.0</td>
+<td align="left">102</td>
+<td align="left">5500</td>
+<td align="right">24</td>
+<td align="right">30</td>
+<td align="left">13950</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="left">164</td>
+<td align="left">audi</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">four</td>
+<td align="left">sedan</td>
+<td align="left">4wd</td>
+<td align="left">front</td>
+<td align="right">99.4</td>
+<td align="right">176.6</td>
+<td align="right">66.4</td>
+<td align="right">54.3</td>
+<td align="right">2824</td>
+<td align="left">ohc</td>
+<td align="left">five</td>
+<td align="right">136</td>
+<td align="left">mpfi</td>
+<td align="left">3.19</td>
+<td align="left">3.4</td>
+<td align="right">8.0</td>
+<td align="left">115</td>
+<td align="left">5500</td>
+<td align="right">18</td>
+<td align="right">22</td>
+<td align="left">17450</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">?</td>
+<td align="left">audi</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">two</td>
+<td align="left">sedan</td>
+<td align="left">fwd</td>
+<td align="left">front</td>
+<td align="right">99.8</td>
+<td align="right">177.3</td>
+<td align="right">66.3</td>
+<td align="right">53.1</td>
+<td align="right">2507</td>
+<td align="left">ohc</td>
+<td align="left">five</td>
+<td align="right">136</td>
+<td align="left">mpfi</td>
+<td align="left">3.19</td>
+<td align="left">3.4</td>
+<td align="right">8.5</td>
+<td align="left">110</td>
+<td align="left">5500</td>
+<td align="right">19</td>
+<td align="right">25</td>
+<td align="left">15250</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">158</td>
+<td align="left">audi</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">four</td>
+<td align="left">sedan</td>
+<td align="left">fwd</td>
+<td align="left">front</td>
+<td align="right">105.8</td>
+<td align="right">192.7</td>
+<td align="right">71.4</td>
+<td align="right">55.7</td>
+<td align="right">2844</td>
+<td align="left">ohc</td>
+<td align="left">five</td>
+<td align="right">136</td>
+<td align="left">mpfi</td>
+<td align="left">3.19</td>
+<td align="left">3.4</td>
+<td align="right">8.5</td>
+<td align="left">110</td>
+<td align="left">5500</td>
+<td align="right">19</td>
+<td align="right">25</td>
+<td align="left">17710</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">?</td>
+<td align="left">audi</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">four</td>
+<td align="left">wagon</td>
+<td align="left">fwd</td>
+<td align="left">front</td>
+<td align="right">105.8</td>
+<td align="right">192.7</td>
+<td align="right">71.4</td>
+<td align="right">55.7</td>
+<td align="right">2954</td>
+<td align="left">ohc</td>
+<td align="left">five</td>
+<td align="right">136</td>
+<td align="left">mpfi</td>
+<td align="left">3.19</td>
+<td align="left">3.4</td>
+<td align="right">8.5</td>
+<td align="left">110</td>
+<td align="left">5500</td>
+<td align="right">19</td>
+<td align="right">25</td>
+<td align="left">18920</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">158</td>
+<td align="left">audi</td>
+<td align="left">gas</td>
+<td align="left">turbo</td>
+<td align="left">four</td>
+<td align="left">sedan</td>
+<td align="left">fwd</td>
+<td align="left">front</td>
+<td align="right">105.8</td>
+<td align="right">192.7</td>
+<td align="right">71.4</td>
+<td align="right">55.9</td>
+<td align="right">3086</td>
+<td align="left">ohc</td>
+<td align="left">five</td>
+<td align="right">131</td>
+<td align="left">mpfi</td>
+<td align="left">3.13</td>
+<td align="left">3.4</td>
+<td align="right">8.3</td>
+<td align="left">140</td>
+<td align="left">5500</td>
+<td align="right">17</td>
+<td align="right">20</td>
+<td align="left">23875</td>
+</tr>
+<tr class="even">
+<td align="right">0</td>
+<td align="left">?</td>
+<td align="left">audi</td>
+<td align="left">gas</td>
+<td align="left">turbo</td>
+<td align="left">two</td>
+<td align="left">hatchback</td>
+<td align="left">4wd</td>
+<td align="left">front</td>
+<td align="right">99.5</td>
+<td align="right">178.2</td>
+<td align="right">67.9</td>
+<td align="right">52.0</td>
+<td align="right">3053</td>
+<td align="left">ohc</td>
+<td align="left">five</td>
+<td align="right">131</td>
+<td align="left">mpfi</td>
+<td align="left">3.13</td>
+<td align="left">3.4</td>
+<td align="right">7.0</td>
+<td align="left">160</td>
+<td align="left">5500</td>
+<td align="right">16</td>
+<td align="right">22</td>
+<td align="left">?</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="left">192</td>
+<td align="left">bmw</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">two</td>
+<td align="left">sedan</td>
+<td align="left">rwd</td>
+<td align="left">front</td>
+<td align="right">101.2</td>
+<td align="right">176.8</td>
+<td align="right">64.8</td>
+<td align="right">54.3</td>
+<td align="right">2395</td>
+<td align="left">ohc</td>
+<td align="left">four</td>
+<td align="right">108</td>
+<td align="left">mpfi</td>
+<td align="left">3.5</td>
+<td align="left">2.8</td>
+<td align="right">8.8</td>
+<td align="left">101</td>
+<td align="left">5800</td>
+<td align="right">23</td>
+<td align="right">29</td>
+<td align="left">16430</td>
+</tr>
+<tr class="even">
+<td align="right">0</td>
+<td align="left">192</td>
+<td align="left">bmw</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">four</td>
+<td align="left">sedan</td>
+<td align="left">rwd</td>
+<td align="left">front</td>
+<td align="right">101.2</td>
+<td align="right">176.8</td>
+<td align="right">64.8</td>
+<td align="right">54.3</td>
+<td align="right">2395</td>
+<td align="left">ohc</td>
+<td align="left">four</td>
+<td align="right">108</td>
+<td align="left">mpfi</td>
+<td align="left">3.5</td>
+<td align="left">2.8</td>
+<td align="right">8.8</td>
+<td align="left">101</td>
+<td align="left">5800</td>
+<td align="right">23</td>
+<td align="right">29</td>
+<td align="left">16925</td>
+</tr>
+<tr class="odd">
+<td align="right">0</td>
+<td align="left">188</td>
+<td align="left">bmw</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">two</td>
+<td align="left">sedan</td>
+<td align="left">rwd</td>
+<td align="left">front</td>
+<td align="right">101.2</td>
+<td align="right">176.8</td>
+<td align="right">64.8</td>
+<td align="right">54.3</td>
+<td align="right">2710</td>
+<td align="left">ohc</td>
+<td align="left">six</td>
+<td align="right">164</td>
+<td align="left">mpfi</td>
+<td align="left">3.31</td>
+<td align="left">3.19</td>
+<td align="right">9.0</td>
+<td align="left">121</td>
+<td align="left">4250</td>
+<td align="right">21</td>
+<td align="right">28</td>
+<td align="left">20970</td>
+</tr>
+<tr class="even">
+<td align="right">0</td>
+<td align="left">188</td>
+<td align="left">bmw</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">four</td>
+<td align="left">sedan</td>
+<td align="left">rwd</td>
+<td align="left">front</td>
+<td align="right">101.2</td>
+<td align="right">176.8</td>
+<td align="right">64.8</td>
+<td align="right">54.3</td>
+<td align="right">2765</td>
+<td align="left">ohc</td>
+<td align="left">six</td>
+<td align="right">164</td>
+<td align="left">mpfi</td>
+<td align="left">3.31</td>
+<td align="left">3.19</td>
+<td align="right">9.0</td>
+<td align="left">121</td>
+<td align="left">4250</td>
+<td align="right">21</td>
+<td align="right">28</td>
+<td align="left">21105</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">?</td>
+<td align="left">bmw</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">four</td>
+<td align="left">sedan</td>
+<td align="left">rwd</td>
+<td align="left">front</td>
+<td align="right">103.5</td>
+<td align="right">189.0</td>
+<td align="right">66.9</td>
+<td align="right">55.7</td>
+<td align="right">3055</td>
+<td align="left">ohc</td>
+<td align="left">six</td>
+<td align="right">164</td>
+<td align="left">mpfi</td>
+<td align="left">3.31</td>
+<td align="left">3.19</td>
+<td align="right">9.0</td>
+<td align="left">121</td>
+<td align="left">4250</td>
+<td align="right">20</td>
+<td align="right">25</td>
+<td align="left">24565</td>
+</tr>
+<tr class="even">
+<td align="right">0</td>
+<td align="left">?</td>
+<td align="left">bmw</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">four</td>
+<td align="left">sedan</td>
+<td align="left">rwd</td>
+<td align="left">front</td>
+<td align="right">103.5</td>
+<td align="right">189.0</td>
+<td align="right">66.9</td>
+<td align="right">55.7</td>
+<td align="right">3230</td>
+<td align="left">ohc</td>
+<td align="left">six</td>
+<td align="right">209</td>
+<td align="left">mpfi</td>
+<td align="left">3.62</td>
+<td align="left">3.39</td>
+<td align="right">8.0</td>
+<td align="left">182</td>
+<td align="left">5400</td>
+<td align="right">16</td>
+<td align="right">22</td>
+<td align="left">30760</td>
+</tr>
+<tr class="odd">
+<td align="right">0</td>
+<td align="left">?</td>
+<td align="left">bmw</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">two</td>
+<td align="left">sedan</td>
+<td align="left">rwd</td>
+<td align="left">front</td>
+<td align="right">103.5</td>
+<td align="right">193.8</td>
+<td align="right">67.9</td>
+<td align="right">53.7</td>
+<td align="right">3380</td>
+<td align="left">ohc</td>
+<td align="left">six</td>
+<td align="right">209</td>
+<td align="left">mpfi</td>
+<td align="left">3.62</td>
+<td align="left">3.39</td>
+<td align="right">8.0</td>
+<td align="left">182</td>
+<td align="left">5400</td>
+<td align="right">16</td>
+<td align="right">22</td>
+<td align="left">41315</td>
+</tr>
+<tr class="even">
+<td align="right">0</td>
+<td align="left">?</td>
+<td align="left">bmw</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">four</td>
+<td align="left">sedan</td>
+<td align="left">rwd</td>
+<td align="left">front</td>
+<td align="right">110.0</td>
+<td align="right">197.0</td>
+<td align="right">70.9</td>
+<td align="right">56.3</td>
+<td align="right">3505</td>
+<td align="left">ohc</td>
+<td align="left">six</td>
+<td align="right">209</td>
+<td align="left">mpfi</td>
+<td align="left">3.62</td>
+<td align="left">3.39</td>
+<td align="right">8.0</td>
+<td align="left">182</td>
+<td align="left">5400</td>
+<td align="right">15</td>
+<td align="right">20</td>
+<td align="left">36880</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="left">121</td>
+<td align="left">chevrolet</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">two</td>
+<td align="left">hatchback</td>
+<td align="left">fwd</td>
+<td align="left">front</td>
+<td align="right">88.4</td>
+<td align="right">141.1</td>
+<td align="right">60.3</td>
+<td align="right">53.2</td>
+<td align="right">1488</td>
+<td align="left">l</td>
+<td align="left">three</td>
+<td align="right">61</td>
+<td align="left">2bbl</td>
+<td align="left">2.91</td>
+<td align="left">3.03</td>
+<td align="right">9.5</td>
+<td align="left">48</td>
+<td align="left">5100</td>
+<td align="right">47</td>
+<td align="right">53</td>
+<td align="left">5151</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">98</td>
+<td align="left">chevrolet</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">two</td>
+<td align="left">hatchback</td>
+<td align="left">fwd</td>
+<td align="left">front</td>
+<td align="right">94.5</td>
+<td align="right">155.9</td>
+<td align="right">63.6</td>
+<td align="right">52.0</td>
+<td align="right">1874</td>
+<td align="left">ohc</td>
+<td align="left">four</td>
+<td align="right">90</td>
+<td align="left">2bbl</td>
+<td align="left">3.03</td>
+<td align="left">3.11</td>
+<td align="right">9.6</td>
+<td align="left">70</td>
+<td align="left">5400</td>
+<td align="right">38</td>
+<td align="right">43</td>
+<td align="left">6295</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data &lt;-<span class="st"> </span>readxl::<span class="kw">read_xlsx</span>(<span class="st">&quot;automobile-losses.xlsx&quot;</span>)
+<span class="kw">summary</span>(data)</code></pre></div>
+<pre><code>##        1                2                  3            
+##  Min.   :-2.0000   Length:205         Length:205        
+##  1st Qu.: 0.0000   Class :character   Class :character  
+##  Median : 1.0000   Mode  :character   Mode  :character  
+##  Mean   : 0.8341                                        
+##  3rd Qu.: 2.0000                                        
+##  Max.   : 3.0000                                        
+##       4                  5                  6            
+##  Length:205         Length:205         Length:205        
+##  Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character  
+##                                                          
+##                                                          
+##                                                          
+##       7                  8                  9                   10        
+##  Length:205         Length:205         Length:205         Min.   : 86.60  
+##  Class :character   Class :character   Class :character   1st Qu.: 94.50  
+##  Mode  :character   Mode  :character   Mode  :character   Median : 97.00  
+##                                                           Mean   : 98.76  
+##                                                           3rd Qu.:102.40  
+##                                                           Max.   :120.90  
+##        11              12              13              14      
+##  Min.   :141.1   Min.   :60.30   Min.   :47.80   Min.   :1488  
+##  1st Qu.:166.3   1st Qu.:64.10   1st Qu.:52.00   1st Qu.:2145  
+##  Median :173.2   Median :65.50   Median :54.10   Median :2414  
+##  Mean   :174.0   Mean   :65.91   Mean   :53.72   Mean   :2556  
+##  3rd Qu.:183.1   3rd Qu.:66.90   3rd Qu.:55.50   3rd Qu.:2935  
+##  Max.   :208.1   Max.   :72.30   Max.   :59.80   Max.   :4066  
+##       15                 16                  17             18           
+##  Length:205         Length:205         Min.   : 61.0   Length:205        
+##  Class :character   Class :character   1st Qu.: 97.0   Class :character  
+##  Mode  :character   Mode  :character   Median :120.0   Mode  :character  
+##                                        Mean   :126.9                     
+##                                        3rd Qu.:141.0                     
+##                                        Max.   :326.0                     
+##       19                 20                  21             22           
+##  Length:205         Length:205         Min.   : 7.00   Length:205        
+##  Class :character   Class :character   1st Qu.: 8.60   Class :character  
+##  Mode  :character   Mode  :character   Median : 9.00   Mode  :character  
+##                                        Mean   :10.14                     
+##                                        3rd Qu.: 9.40                     
+##                                        Max.   :23.00                     
+##       23                  24              25             26           
+##  Length:205         Min.   :13.00   Min.   :16.00   Length:205        
+##  Class :character   1st Qu.:19.00   1st Qu.:25.00   Class :character  
+##  Mode  :character   Median :24.00   Median :30.00   Mode  :character  
+##                     Mean   :25.22   Mean   :30.75                     
+##                     3rd Qu.:30.00   3rd Qu.:34.00                     
+##                     Max.   :49.00   Max.   :54.00</code></pre>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="problem-description.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="methods-used.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-data.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

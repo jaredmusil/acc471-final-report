@@ -1,0 +1,26 @@
+# Data
+
+Before doing any analysis, the feactors withing data set were first checked for missing or invalid data. Of the original 205 reccords, 41 were removed because they contained missing data for the `normalized-lossess` factor, which was coded as a `?`. This resulted in a dataset of 164 reccords of clean data. No other factors needed cleaning up, as the data was properly coded for each reccord.
+
+```{r data-dictionary, tidy=FALSE}
+library(readxl)
+data_dict <- readxl::read_xlsx("automobile-losses-data-dictionary.xlsx")
+knitr::kable(head(data_dict, 20), caption = 'Data Dictionary - Initial', booktabs = TRUE)
+```
+
+Of these factors, 10 of the initial 26 were removed, resulting in the 16 factors that will be used in analysis. These factors are noted in green in `Keep` column of the above table.
+
+The objective factor in the dataset is determined to be ``.
+
+Next, the data was partitioned into three groups named _training_, _test_, and _validation_. This was 
+
+```{r raw-data, tidy=FALSE}
+data <- readxl::read_xlsx("automobile-losses.xlsx")
+knitr::kable(head(data, 20), caption = 'Dataset', booktabs = TRUE)
+```
+
+```{r data-summary-stats, tidy=FALSE}
+data <- readxl::read_xlsx("automobile-losses.xlsx")
+summary(data)
+```
+
