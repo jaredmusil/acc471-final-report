@@ -12,16 +12,16 @@ process "symboling".  A value of +3 indicates that the auto is
 risky, -3 that it is probably pretty safe.  
 
 ```{r risk-scale, echo=FALSE}
-plot.new() 
-plot.window( c(-3,3), c(-1, 1))
+plot.new()
+plot.window(c(-3,3), c(-1, 1))
 
-axis(1, at=-3:3, pos=0) 
+axis(1, at=-3:3, pos=0)
 
-lines(c(0.5, 0.5, 3, 3), c(0.1, 0.3, 0.3, 0.1))
-text(1.75, 0.4, 'Risky' )  # the plotrix package has a function for text in a box 
+lines(c(0.5, 0.5, 3, 3), c(0.1, 0.2, 0.2, 0.1), col="red")
+text(1.75, 0.3, 'Risky' )  # the plotrix package has a function for text in a box 
 
-lines(c(-3, -3, -0.5, -0.5), c(0.1, 0.3, 0.3, 0.1)) 
-text(-1.75, 0.4, 'Safe') 
+lines(c(-3, -3, -0.5, -0.5), c(0.1, 0.2, 0.2, 0.1), col="green")
+text(-1.75, 0.3, 'Safe')
 ```
 
 The third factor is the relative average loss payment per insured 
