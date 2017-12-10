@@ -5,7 +5,7 @@ bookdown::gitbook:
       before: |
         <li><a href="./">ACC 471 - Final Report</a></li>
       after: |
-        <li><a href="https://github.com/jaredmusil/acc471-final-report" target="blank">Created with R and bookdown</a></li>
+        <li><a href="https://jaredmusil.github.io/acc471-final-report/" target="blank">Created with R and bookdown</a></li>
     download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:
