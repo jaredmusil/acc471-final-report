@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="data.html">
+<link rel="prev" href="results.html">
+<link rel="next" href="future-analysis.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -135,11 +135,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="problem-description" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Problem Description</h1>
-<p>This data set consists of three types of entities: (a) the specification of an auto in terms of various characteristics, (b) its assigned insurance risk rating, (c) its normalized losses in use as compared to other cars. The second rating corresponds to the degree to which the auto is more risky than its price indicates. Cars are initially assigned a risk factor symbol associated with its price. Then, if it is more risky (or less), this symbol is adjusted by moving it up (or down) the scale. Actuarians call this process “symboling”. A value of +3 indicates that the auto is risky, -3 that it is probably pretty safe.</p>
-<p><img src="bookdown-demo_files/figure-html/risk-scale-1.png" width="672" /></p>
-<p>The third factor is the relative average loss payment per insured vehicle year. This value is normalized for all autos within a particular size classification (two-door small, station wagons, sports/speciality, etc…), and represents the average loss per car per year.</p>
+<div id="recommendations" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Recommendations</h1>
+<p>As can be seen from the classification tree model, the most important factor in weiher of not it is risky, is if its wheel length is less than or equal to 94, it tends to be one point safer. The next branchs of the tree indicates that certian makes of car are more risky than others and do contribute to the safety ranking of a vehicle. This is reinfocred with our regression tree analysis that found Volvo to be the most safe manufacturer. The last factor that shows up in the decision tree is normalized_lossess. This factor ranges from 65 to 256, and according to the tree a large wheel base car is more likely to be safe than cars with a smaller wheel base. The span on the diference between this distinction was between -1 and 2 which is the most substantial difference across the entire tree node.</p>
 
 </div>
             </section>
@@ -147,8 +145,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="results.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="future-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
