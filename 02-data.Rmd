@@ -4,24 +4,24 @@ Before doing any analysis, the factors within the dataset were first checked for
 
 Seven of the factors contained missing or improperly coded data. In this dataset in partular, all missing data has been coded with the value of `?`. In all cases below, the records containing the missing data have been removed.  
 
-Index  Factor             Number of records missing a value
------  -----------------  ---------------------------------
-2      normalized-losses  41
-6      num-of-doors       2
-19     bore               4
-20     stroke             4
-22     horsepower         2
-23     peak-rpm           2
-26     price              4
+N   Factor             Number of records missing a value
+--  -----------------  ---------------------------------
+2   normalized-losses  41
+6   num-of-doors       2
+19  bore               4
+20  stroke             4
+22  horsepower         2
+23  peak-rpm           2
+26  price              4
 
-Of the original 205 records, X were removed because they contained missing data for the `normalized-lossess` factor, which was coded as a `?`. This resulted in a dataset of 164 records of clean data. No other factors needed cleaning up, as the data was properly coded for each record.
+Of the original 205 records, 46 were removed because they contained missing data in one or more of the above listed factors, which in this case was uniformly coded as a `?`. This resulted in a dataset of 159 records of clean data. No other factors needed cleaning up, as the data was properly coded for each record.
 
 ```{r data-dictionary, echo=FALSE}
 data_dict <- readxl::read_xlsx(path = "data/data-dictionary.xlsx")
-knitr::kable(data_dict, caption = 'Data Dictionary - Initial', booktabs = TRUE)
+knitr::kable(data_dict, caption = 'Data Dictionary', booktabs = TRUE)
 ```
 
-Of these factors, 10 of the initial 26 were removed, resulting in the 16 factors that will be used in analysis. These factors are noted in green in `Keep` column of the above table.
+Of the remaining data, the reccords were split into two equal groups named _training_, and _test_ where each held 50% of the reccords in the dataset.
 
 ```{r raw-data, echo=FALSE}
 data_dict  <- readxl::read_xlsx(path = "data/data-dictionary.xlsx")
@@ -29,9 +29,7 @@ data_clean <- read.csv("data/data-clean.csv", header = TRUE)
 names(data_clean) <- data_dict[['Description']]
 ```
 
-The objective factor in the dataset is determined to be `symboling`.
-
-Next, the data was partitioned into three groups named _training_, _test_, and _validation_. This was 
+The objective factor in the dataset is determined to be `symboling`. For the remainder of the factors, the summary statistics were examined for continuous variables (Minimum, 1st Quartile, Median 3rd Quartile, and Maximum). For discrete factors we simply looked at the raw counts of each. A few cars had unique values sjch as the lone three cylinder hatchback from chevrolet, and the lone mixed fuel injection (mfi) dodge hatchback. They do not at first analysis seem to be outliers but were re-evaluated after looking at if they skewed our resulting models. A rough summary of the factors summary statistics is as follows:
 
 ```{r data-summary-stats, echo=FALSE}
 data <- read.csv("data/data-clean.csv")

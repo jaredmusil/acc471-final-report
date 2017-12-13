@@ -35,3 +35,6 @@ vignettes/*.pdf
 
 # Local only files
 local_only/
+
+# Locally build bookdown files
+_book/
