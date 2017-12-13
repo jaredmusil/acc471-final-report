@@ -1,5 +1,5 @@
 # Conculsion
 
-Given the results of this analysis, we can confidently conclude that 
+While this data set did have its limitations, it was still able to provide some interesting results. Given the results of this analysis, we can confidently conclude that the factors of `wheel_base`, `make`, and `normalized_lossess` are the most significant in determining the risk of loss in most vehicles found within the dataset. Of those three factors, `wheel_base` had the most impact on the underlying risk classification.
 
-`r if (knitr:::is_html_output()) '# References {-}'`
+

@@ -1,3 +1,3 @@
-# Recomentations
+# Recommendations
 
-
+As can be seen from the classification tree model, the most important factor in weiher of not it is risky, is if its wheel length is less than or equal to 94, it tends to be one point safer. The next branchs of the tree indicates that certian makes of car are more risky than others and do contribute to the safety ranking of a vehicle. This is reinfocred with our regression tree analysis that found Volvo to be the most safe manufacturer. The last factor that shows up in the decision tree is normalized_lossess. This factor ranges from 65 to 256, and according to the tree a large wheel base car is more likely to be safe than cars with a smaller wheel base. The span on the diference between this distinction was between -1 and 2 which is the most substantial difference across the entire tree node.

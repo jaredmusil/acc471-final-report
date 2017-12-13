@@ -1,7 +1,5 @@
 # Results
 
-...
-
 ## Random Forest
 
 First we decided to use a random forest models to get a rough approximation of what input factors were important. Note that this type of analysis tends to favor factors with high numbers of levels. We did not try and correct for this as it is more of a starting point in understanding our dataset for use in the below models. 
@@ -32,17 +30,15 @@ Armed with the relative factor importance, we first tried a few variations of si
 * `num_of_doors` alone.
 * `make` and `num_of_doors`.
 * `make`, `numofdoors`, and `wheelbase`.
-* all variables included
 
 Interestingly, this analysis determined that the car manufactur Volvo is significantly safer that its peers. Additionally cars with two doors are also much more likely to not be safe than those with four doors. 
 
-```{r linear-regression, echo=FALSE, warning=FALSE}
+```{r linear-regression, echo=TRUE, warning=FALSE}
 # Linear Regression model
 lm_make                      <- lm(symboling~make, data = training_data)
 lm_numofdoors                <- lm(symboling~num_of_doors, data = training_data)
 lm_make_numofdoors           <- lm(symboling~make + num_of_doors, data = training_data)
 lm_make_numofdoors_wheelbase <- lm(symboling~make + num_of_doors + wheel_base, data = training_data)
-#lm_all <- lm(symboling~., data = training_data)
 
 # P Values
 p_make                      <- predict(lm_make, data = test_data)
@@ -58,22 +54,21 @@ rmse_make_numofdoors_wheelbase <- sqrt(mean((p_make_numofdoors_wheelbase - test_
 
 # Display summary & RMSE results
 summary(lm_make)
-print("RMSE: " + rmse_make)
+rmse_make
 
 summary(lm_numofdoors)
-print("RMSE: " + rmse_numofdoors)
+rmse_numofdoors
 
 summary(lm_make_numofdoors)
-print("RMSE: " + rmse_make_numofdoors)
+rmse_make_numofdoors
 
 summary(lm_make_numofdoors_wheelbase)
-print("RMSE: " + rmse_make_numofdoors_wheelbase)
-
+rmse_make_numofdoors_wheelbase
 ```
 
 ## Classification Tree
 
-```{r classification-tree, echo=FALSE}
+```{r classification-tree, echo=TRUE}
 # import classification tree library
 library(rpart)
 
@@ -81,7 +76,7 @@ library(rpart)
 data_clean <- read.csv("data/data-clean.csv")
 
 # grow tree 
-fit <- rpart(symboling ~ normalized_losses + make + fuel_type + aspiration + 
+tree <- rpart(symboling ~ normalized_losses + make + fuel_type + aspiration + 
                num_of_doors + body_style + drive_wheels + engine_location + 
                wheel_base + length + width + height + curb_weight + 
                engine_type + num_of_cylinders + engine_size + fuel_system + 
@@ -90,18 +85,17 @@ fit <- rpart(symboling ~ normalized_losses + make + fuel_type + aspiration +
 # NOTE: method={"class" for a classification tree, "anova" for a regression tree}
 
 # plot tree 
-plot(fit, uniform=TRUE, main="Classification Tree")
-text(fit, use.n=TRUE, all=TRUE, cex=.8)
+# plot(fit, uniform=TRUE, main="Classification Tree")
+# text(fit, use.n=TRUE, all=TRUE, cex=.8)
 ```
 
-```{r regression-tree-pruned, echo=FALSE}
+```{r regression-tree-pruned, echo=TRUE}
 # prune the tree 
-pfit <- prune(fit, cp=0.01160389) # from cptable   
+pfit <- prune(tree, cp=0.01160389) # from cptable   
 
 # plot the pruned tree 
-plot(pfit, uniform=TRUE, main="Pruned Regression Tree")
+plot(pfit, uniform=TRUE, main="Pruned Classification Tree")
 text(pfit, use.n=TRUE, all=TRUE, cex=.8)
 ```
 
-As can be seen from the tree model, the most important factor in weiher of not it is risky, is if its wheel length is less than or equal to 94, it tends to be one point safer. The next branchs of the tree indicates that certian makes of car are more risky than others and do contribute to the safety ranking of a vehicle. This is reinfocred with our regression tree analysis that found Volvo to be the most safe manufacturer. The last factor that shows up in the decision tree is normalized_lossess. This factor ranges from 65 to 256, and according to the tree a large wheel base car is more likely to be safe than cars with a smaller wheel base. the span on the diference between this distinction was between -1 and 2 which is the most substantial difference across the entire tree node.
 

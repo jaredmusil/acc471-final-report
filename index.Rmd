@@ -15,19 +15,17 @@ github-repo: jaredmusil/acc471-final-report
 description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
 ---
 
-```{r, load-dependencies, echo=FALSE}
+```{r, load-dependencies, echo=FALSE, warning=FALSE}
 library(bookdown)
 ```
 
 # Introduction {#intro}
 
-**Travis CI test**
+The ability to utilize analytics to predict automobile lossess is a area of active research and application throughout the insurance and fin-tech industries. All of the "big four" US domiciled auto insurrers being State Farm, Geico, Allstate, and Progressive are actively engaging in research to operationalize analytical models to increase operational efficency. This dataset is representitive of claims data common to all of these auto insurance providers, and the industry at large. From a consumer standpoint, this has the potential to reduce average claim times, reduce premium costs, and improve claims decisions (total loss, not total loss). 
 
-The ability to utilize analytics to predict automobeile lossess is a area of active research and application throughout the insurance and fin-tech industries. All of the "big four" US domiciled auto insurrers being State Farm, Geico, Allstate, and Progressive are actively engaging in research to operationalize analytical models to increase operational efficency. This dataset is representitive of claims data common to all of these auto insurance providers, and the industry at large. From a consumer standpoint, this has the potential to reduce average claim times, reduce premium costs, and improve claims decisions (total loss, not total loss). 
+This report is differes only to those being done by those auto insurers by its dataset alone, and can be seen as an analysis that would be presented to a manager at one of those companies.  
 
-This report is differes only to those being done by those auto insurers by its dataset alone, and can be seen as an analysis that we would provide to a manager at one of those companies.  
-
-Throughout this report, the columns of our dataset will be refered to as factors, and the rows of our dataset will be refered to as reccords. This is because it follows the terminology used by the R statistical programming language, which was the analytical tool used in this report. This was chosen to allow for reproducable research and full transparency of the methods used to arrive at our conclusions. The code itself has been omitted from the report for brevity, but is available for review and reuse at the following URL: https://github.com/jaredmusil/acc471-final-report 
+Throughout this report, the columns of our dataset will be refered to as factors, and the rows of our dataset will be refered to as records. This is because it follows the terminology used by the R statistical programming language, which was the analytical tool used in this report. This was chosen to allow for reproducable research and full transparency of the methods used to arrive at our conclusions. The code itself has been omitted from the report for brevity, but is available for review and reuse at the following URL: https://github.com/jaredmusil/acc471-final-report 
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
