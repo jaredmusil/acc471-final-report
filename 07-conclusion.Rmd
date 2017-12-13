@@ -1,5 +1,5 @@
 # Conculsion
 
-Given the results of this analysis, we
+Given the results of this analysis, we can confidently conclude that 
 
 `r if (knitr:::is_html_output()) '# References {-}'`

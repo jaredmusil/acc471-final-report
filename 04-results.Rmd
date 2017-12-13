@@ -34,6 +34,8 @@ Armed with the relative factor importance, we first tried a few variations of si
 * `make`, `numofdoors`, and `wheelbase`.
 * all variables included
 
+Interestingly, this analysis determined that the car manufactur Volvo is significantly safer that its peers. Additionally cars with two doors are also much more likely to not be safe than those with four doors. 
+
 ```{r linear-regression, echo=FALSE, warning=FALSE}
 # Linear Regression model
 lm_make                      <- lm(symboling~make, data = training_data)
@@ -56,23 +58,23 @@ rmse_make_numofdoors_wheelbase <- sqrt(mean((p_make_numofdoors_wheelbase - test_
 
 # Display summary & RMSE results
 summary(lm_make)
-print("RMSE: ", rmse_make)
+print("RMSE: " + rmse_make)
 
 summary(lm_numofdoors)
-print("RMSE: ", rmse_numofdoors)
+print("RMSE: " + rmse_numofdoors)
 
 summary(lm_make_numofdoors)
-print("RMSE: ", rmse_make_numofdoors)
+print("RMSE: " + rmse_make_numofdoors)
 
 summary(lm_make_numofdoors_wheelbase)
-print("RMSE: ", rmse_make_numofdoors_wheelbase)
+print("RMSE: " + rmse_make_numofdoors_wheelbase)
 
 ```
 
-## Regression Tree
+## Classification Tree
 
-```{r regression-tree, echo=FALSE}
-# import regression tree library
+```{r classification-tree, echo=FALSE}
+# import classification tree library
 library(rpart)
 
 # load data
@@ -101,22 +103,5 @@ plot(pfit, uniform=TRUE, main="Pruned Regression Tree")
 text(pfit, use.n=TRUE, all=TRUE, cex=.8)
 ```
 
-...
+As can be seen from the tree model, the most important factor in weiher of not it is risky, is if its wheel length is less than or equal to 94, it tends to be one point safer. The next branchs of the tree indicates that certian makes of car are more risky than others and do contribute to the safety ranking of a vehicle. This is reinfocred with our regression tree analysis that found Volvo to be the most safe manufacturer. The last factor that shows up in the decision tree is normalized_lossess. This factor ranges from 65 to 256, and according to the tree a large wheel base car is more likely to be safe than cars with a smaller wheel base. the span on the diference between this distinction was between -1 and 2 which is the most substantial difference across the entire tree node.
 
-**Lift Chart**
-
-...
-
-**Decile Chart**
-
-...
-
-## Classification Tree
-
-**Lift Chart**
-
-...
-
-**Decile Chart**
-
-...
