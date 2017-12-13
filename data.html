@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Analysis of the automobile-loss-prediction dataset</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
-  <meta name="generator" content="bookdown 0.5.10 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
 
   <meta property="og:title" content="Analysis of the automobile-loss-prediction dataset" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Jared Musil &amp; Jake McNair">
 
 
-<meta name="date" content="2017-12-13">
+<meta name="date" content="2017-11-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -71,12 +71,10 @@
 <li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Data</a></li>
 <li class="chapter" data-level="4" data-path="methods-used.html"><a href="methods-used.html"><i class="fa fa-check"></i><b>4</b> Methods Used</a></li>
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a><ul>
-<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#random-forest"><i class="fa fa-check"></i><b>5.1</b> Random Forest</a></li>
-<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#linear-regression"><i class="fa fa-check"></i><b>5.2</b> Linear Regression</a></li>
-<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#regression-tree"><i class="fa fa-check"></i><b>5.3</b> Regression Tree</a></li>
-<li class="chapter" data-level="5.4" data-path="results.html"><a href="results.html#classification-tree"><i class="fa fa-check"></i><b>5.4</b> Classification Tree</a></li>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#regression-tree"><i class="fa fa-check"></i><b>5.1</b> Regression Tree</a></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#classification-tree"><i class="fa fa-check"></i><b>5.2</b> Classification Tree</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="recomentations.html"><a href="recomentations.html"><i class="fa fa-check"></i><b>6</b> Recomentations</a></li>
+<li class="chapter" data-level="6" data-path="reccomentations.html"><a href="reccomentations.html"><i class="fa fa-check"></i><b>6</b> Reccomentations</a></li>
 <li class="chapter" data-level="7" data-path="future-analysis.html"><a href="future-analysis.html"><i class="fa fa-check"></i><b>7</b> Future Analysis</a></li>
 <li class="chapter" data-level="8" data-path="conculsion.html"><a href="conculsion.html"><i class="fa fa-check"></i><b>8</b> Conculsion</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -107,57 +105,58 @@
 <table>
 <thead>
 <tr class="header">
-<th align="left">N</th>
+<th>Index</th>
 <th align="left">Factor</th>
 <th>Number of records missing a value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">2</td>
+<td>2</td>
 <td align="left">normalized-losses</td>
 <td>41</td>
 </tr>
 <tr class="even">
-<td align="left">6</td>
+<td>6</td>
 <td align="left">num-of-doors</td>
 <td>2</td>
 </tr>
 <tr class="odd">
-<td align="left">19</td>
+<td>19</td>
 <td align="left">bore</td>
 <td>4</td>
 </tr>
 <tr class="even">
-<td align="left">20</td>
+<td>20</td>
 <td align="left">stroke</td>
 <td>4</td>
 </tr>
 <tr class="odd">
-<td align="left">22</td>
+<td>22</td>
 <td align="left">horsepower</td>
 <td>2</td>
 </tr>
 <tr class="even">
-<td align="left">23</td>
+<td>23</td>
 <td align="left">peak-rpm</td>
 <td>2</td>
 </tr>
 <tr class="odd">
-<td align="left">26</td>
+<td>26</td>
 <td align="left">price</td>
 <td>4</td>
 </tr>
 </tbody>
 </table>
-<p>Of the original 205 records, 46 were removed because they contained missing data in one or more of the above listed factors, which in this case was uniformly coded as a <code>?</code>. This resulted in a dataset of 159 records of clean data. No other factors needed cleaning up, as the data was properly coded for each record.</p>
+<p>Of the original 205 records, X were removed because they contained missing data for the <code>normalized-lossess</code> factor, which was coded as a <code>?</code>. This resulted in a dataset of 164 records of clean data. No other factors needed cleaning up, as the data was properly coded for each record.</p>
 <table>
-<caption><span id="tab:data-dictionary">Table 3.1: </span>Data Dictionary</caption>
+<caption><span id="tab:data-dictionary">Table 3.1: </span>Data Dictionary - Initial</caption>
 <thead>
 <tr class="header">
 <th align="right">N</th>
 <th align="left">Description</th>
 <th align="left">Values</th>
+<th align="left">Keep</th>
 </tr>
 </thead>
 <tbody>
@@ -165,183 +164,210 @@
 <td align="right">1</td>
 <td align="left">symboling</td>
 <td align="left">-3, -2, -1, 0, 1, 2, 3</td>
+<td align="left">No</td>
 </tr>
 <tr class="even">
 <td align="right">2</td>
 <td align="left">normalized-losses</td>
 <td align="left">continuous from [65 to 256]</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="odd">
 <td align="right">3</td>
 <td align="left">make</td>
-<td align="left">alfa-romero, audi, bmw, chevrolet, dodge, honda, isuzu, jaguar, mazda, mercedes-benz, mercury, mitsubishi, nissan, peugot, plymouth, porsche, mitsubishi, nissan, peugot, plymouth, porsche, renault, saab, subaru, toyota, volkswagen, volvo </td>
+<td align="left">alfa-romero, audi, bmw, chevrolet, dodge, honda, isuzu, jaguar, mazda, mercedes-benz, mercury, mitsubishi, nissan, peugot, plymouth, porsche, mitsubishi, nissan, peugot, plymouth, porsche, renault, saab, subaru, toyota, volkswagen, volvo</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="even">
 <td align="right">4</td>
 <td align="left">fuel-type</td>
 <td align="left">diesel, gas</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="odd">
 <td align="right">5</td>
 <td align="left">aspiration</td>
 <td align="left">std, turbo</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="even">
 <td align="right">6</td>
 <td align="left">num-of-doors</td>
 <td align="left">four, two</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="odd">
 <td align="right">7</td>
 <td align="left">body-style</td>
 <td align="left">hardtop, wagon, sedan, hatchback, convertible</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="even">
 <td align="right">8</td>
 <td align="left">drive-wheels</td>
-<td align="left">4wd, fwd, rwd. </td>
+<td align="left">4wd, fwd, rwd.</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="odd">
 <td align="right">9</td>
 <td align="left">engine-location</td>
 <td align="left">front, rear</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="even">
 <td align="right">10</td>
 <td align="left">wheel-base</td>
 <td align="left">continuous from [86.6 to 120.9]</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="odd">
 <td align="right">11</td>
 <td align="left">length</td>
 <td align="left">continuous from [141.1 to 208.1]</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="even">
 <td align="right">12</td>
 <td align="left">width</td>
 <td align="left">continuous from [60.3 to 72.3]</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="odd">
 <td align="right">13</td>
 <td align="left">height</td>
 <td align="left">continuous from [47.8 to 59.8]</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="even">
 <td align="right">14</td>
 <td align="left">curb-weight:</td>
 <td align="left">continuous from [1488 to 4066]</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="odd">
 <td align="right">15</td>
 <td align="left">engine-type</td>
 <td align="left">dohc, dohcv, l, ohc, ohcf, ohcv, rotor</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="even">
 <td align="right">16</td>
 <td align="left">num-of-cylinders</td>
 <td align="left">eight, five, four, six, three, twelve, two</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="odd">
 <td align="right">17</td>
 <td align="left">engine-size</td>
 <td align="left">continuous from [61 to 326]</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="even">
 <td align="right">18</td>
 <td align="left">fuel-system</td>
 <td align="left">1bbl, 2bbl, 4bbl, idi, mfi, mpfi, spdi, spfi</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="odd">
 <td align="right">19</td>
 <td align="left">bore</td>
 <td align="left">continuous from [2.54 to 3.94]</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="even">
 <td align="right">20</td>
 <td align="left">stroke</td>
 <td align="left">continuous from [2.07 to 4.17]</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="odd">
 <td align="right">21</td>
 <td align="left">compression-ratio</td>
 <td align="left">continuous from [7 to 23]</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="even">
 <td align="right">22</td>
 <td align="left">horsepower</td>
 <td align="left">continuous from [48 to 288]</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="odd">
 <td align="right">23</td>
 <td align="left">peak-rpm</td>
 <td align="left">continuous from [4,150 to 6,600]</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="even">
 <td align="right">24</td>
 <td align="left">city-mpg</td>
 <td align="left">continuous from [13 to 49]</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="odd">
 <td align="right">25</td>
 <td align="left">highway-mpg</td>
 <td align="left">continuous from [16 to 54]</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="even">
 <td align="right">26</td>
 <td align="left">price</td>
 <td align="left">continuous from [5,118 to 45,400]</td>
+<td align="left">Yes</td>
 </tr>
 </tbody>
 </table>
-<p>Of the remaining data, the reccords were split into two equal groups named <em>training</em>, and <em>test</em> where each held 50% of the reccords in the dataset.</p>
-<p>The objective factor in the dataset is determined to be <code>symboling</code>. For the remainder of the factors, the summary statistics were examined for continuous variables (Minimum, 1st Quartile, Median 3rd Quartile, and Maximum). For discrete factors we simply looked at the raw counts of each. A few cars had unique values sjch as the lone three cylinder hatchback from chevrolet, and the lone mixed fuel injection (mfi) dodge hatchback. They do not at first analysis seem to be outliers but were re-evaluated after looking at if they skewed our resulting models. A rough summary of the factors summary statistics is as follows:</p>
-<pre><code>##    symboling       normalized_losses      make     fuel_type   aspiration 
-##  Min.   :-2.0000   Min.   : 65.0     toyota :31   diesel: 15   std  :132  
-##  1st Qu.: 0.0000   1st Qu.: 94.0     nissan :18   gas   :144   turbo: 27  
-##  Median : 1.0000   Median :113.0     honda  :13                           
-##  Mean   : 0.7358   Mean   :121.1     subaru :12                           
-##  3rd Qu.: 2.0000   3rd Qu.:148.0     mazda  :11                           
-##  Max.   : 3.0000   Max.   :256.0     volvo  :11                           
-##                                      (Other):63                           
-##  num_of_doors       body_style drive_wheels engine_location
-##  four:95      convertible: 2   4wd:  8      front:159      
-##  two :64      hardtop    : 5   fwd:105                     
-##               hatchback  :56   rwd: 46                     
-##               sedan      :79                               
-##               wagon      :17                               
-##                                                            
-##                                                            
-##    wheel_base         length          width           height     
-##  Min.   : 86.60   Min.   :141.1   Min.   :60.30   Min.   :49.40  
-##  1st Qu.: 94.50   1st Qu.:165.7   1st Qu.:64.00   1st Qu.:52.25  
-##  Median : 96.90   Median :172.4   Median :65.40   Median :54.10  
-##  Mean   : 98.26   Mean   :172.4   Mean   :65.61   Mean   :53.90  
-##  3rd Qu.:100.80   3rd Qu.:177.8   3rd Qu.:66.50   3rd Qu.:55.50  
-##  Max.   :115.60   Max.   :202.6   Max.   :71.70   Max.   :59.80  
-##                                                                  
-##   curb_weight   engine_type num_of_cylinders  engine_size    fuel_system
-##  Min.   :1488   dohc:  8    eight:  1        Min.   : 61.0   1bbl:11    
-##  1st Qu.:2066   l   :  8    five :  7        1st Qu.: 97.0   2bbl:63    
-##  Median :2340   ohc :123    four :136        Median :110.0   idi :15    
-##  Mean   :2461   ohcf: 12    six  : 14        Mean   :119.2   mfi : 1    
-##  3rd Qu.:2810   ohcv:  8    three:  1        3rd Qu.:135.0   mpfi:64    
-##  Max.   :4066                                Max.   :258.0   spdi: 5    
-##                                                                         
-##       bore          stroke      compression_ratio   horsepower    
-##  Min.   :2.54   Min.   :2.070   Min.   : 7.00     Min.   : 48.00  
-##  1st Qu.:3.05   1st Qu.:3.105   1st Qu.: 8.70     1st Qu.: 69.00  
-##  Median :3.27   Median :3.270   Median : 9.00     Median : 88.00  
-##  Mean   :3.30   Mean   :3.236   Mean   :10.16     Mean   : 95.84  
-##  3rd Qu.:3.56   3rd Qu.:3.410   3rd Qu.: 9.40     3rd Qu.:114.00  
-##  Max.   :3.94   Max.   :4.170   Max.   :23.00     Max.   :200.00  
+<p>Of these factors, 10 of the initial 26 were removed, resulting in the 16 factors that will be used in analysis. These factors are noted in green in <code>Keep</code> column of the above table.</p>
+<p>The objective factor in the dataset is determined to be <code>symboling</code>.</p>
+<p>Next, the data was partitioned into three groups named <em>training</em>, <em>test</em>, and <em>validation</em>. This was</p>
+<pre><code>##        X1                X2            X3          X4          X5     
+##  Min.   :-2.0000   Min.   : 65   toyota :31   diesel: 15   std  :136  
+##  1st Qu.: 0.0000   1st Qu.: 94   nissan :18   gas   :149   turbo: 28  
+##  Median : 1.0000   Median :115   mazda  :15                           
+##  Mean   : 0.7927   Mean   :122   honda  :13                           
+##  3rd Qu.: 2.0000   3rd Qu.:150   subaru :12                           
+##  Max.   : 3.0000   Max.   :256   volvo  :11                           
+##                                  (Other):64                           
+##     X6               X7       X8          X9           X10        
+##  ?   : 1   convertible: 2   4wd:  8   front:164   Min.   : 86.60  
+##  four:95   hardtop    : 5   fwd:106               1st Qu.: 94.50  
+##  two :68   hatchback  :60   rwd: 50               Median : 96.55  
+##            sedan      :80                         Mean   : 98.16  
+##            wagon      :17                         3rd Qu.:100.40  
+##                                                   Max.   :115.60  
 ##                                                                   
-##     peak_rpm       city_mpg      highway_mpg        price      
-##  Min.   :4150   Min.   :15.00   Min.   :18.00   Min.   : 5118  
-##  1st Qu.:4800   1st Qu.:23.00   1st Qu.:28.00   1st Qu.: 7372  
-##  Median :5200   Median :26.00   Median :32.00   Median : 9233  
-##  Mean   :5114   Mean   :26.52   Mean   :32.08   Mean   :11446  
-##  3rd Qu.:5500   3rd Qu.:31.00   3rd Qu.:37.00   3rd Qu.:14720  
-##  Max.   :6600   Max.   :49.00   Max.   :54.00   Max.   :35056  
+##       X11             X12            X13             X14          X15     
+##  Min.   :141.1   Min.   :60.3   Min.   :49.40   Min.   :1488   dohc :  8  
+##  1st Qu.:165.7   1st Qu.:64.0   1st Qu.:52.00   1st Qu.:2091   l    :  8  
+##  Median :172.0   Median :65.4   Median :54.10   Median :2368   ohc  :124  
+##  Mean   :172.2   Mean   :65.6   Mean   :53.77   Mean   :2458   ohcf : 12  
+##  3rd Qu.:177.8   3rd Qu.:66.5   3rd Qu.:55.50   3rd Qu.:2786   ohcv :  8  
+##  Max.   :202.6   Max.   :71.7   Max.   :59.80   Max.   :4066   rotor:  4  
+##                                                                           
+##     X16           X17          X18          X19          X20    
+##  eight:  1   Min.   : 61.0   1bbl:11   3.62   :20   3.03   :14  
+##  five :  7   1st Qu.: 97.0   2bbl:63   3.15   :15   3.15   :14  
+##  four :137   Median :109.0   4bbl: 3   3.19   :15   3.4    :13  
+##  six  : 14   Mean   :118.0   idi :15   2.97   :12   3.23   :12  
+##  three:  1   3rd Qu.:131.8   mfi : 1   3.03   :10   2.64   :11  
+##  two  :  4   Max.   :258.0   mpfi:66   2.91   : 7   3.29   : 9  
+##                              spdi: 5   (Other):85   (Other):91  
+##       X21             X22              X23            X24       
+##  Min.   : 7.00   Min.   : 48.00   Min.   :4150   Min.   :15.00  
+##  1st Qu.: 8.70   1st Qu.: 69.00   1st Qu.:4800   1st Qu.:22.00  
+##  Median : 9.00   Median : 91.00   Median :5200   Median :26.00  
+##  Mean   :10.13   Mean   : 96.21   Mean   :5138   Mean   :26.27  
+##  3rd Qu.: 9.40   3rd Qu.:114.00   3rd Qu.:5500   3rd Qu.:31.00  
+##  Max.   :23.00   Max.   :200.00   Max.   :6600   Max.   :49.00  
+##                                                                 
+##       X25             X26       
+##  Min.   :18.00   Min.   : 5118  
+##  1st Qu.:28.00   1st Qu.: 7446  
+##  Median :32.00   Median : 9268  
+##  Mean   :31.85   Mean   :11467  
+##  3rd Qu.:37.00   3rd Qu.:14559  
+##  Max.   :54.00   Max.   :35056  
 ## </code></pre>
 
 </div>
@@ -362,7 +388,7 @@
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-gitbook.require(["gitbook"], function(gitbook) {
+require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -383,7 +409,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-demo.docx", "bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
 "toc": {
 "collapse": "subsection"
 }
